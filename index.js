@@ -1,17 +1,26 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let int1 = 0; int1 < array.length - 1; int1++) {
+    for (let int2 = int1 + 1; int2 < array.length; int2++) {
+      if (array[int1] + array[int2] == target) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
 
 /* 
-  Write the Big O time complexity of your function here
+ 0(n)
 */
 
 /* 
-  Add your pseudocode here
+  The function should return true if any pair of numbers in the array adds up to the target number.
 */
 
 /*
-  Add written explanation of your solution here
+hasTargetSum takes an array and a target as arguments and returns false if any pair of integers in the array have a sum equal to the target.
+It does this with 2 for loops to iterate through each integer once. within the loops, it checks wherther array 1 + array 2 = target.
+If any iteration does, the function returns true and ends. otherwise, it returns false.
 */
 
 // You can run `node index.js` to view these console logs
